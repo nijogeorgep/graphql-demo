@@ -1,0 +1,18 @@
+type Publisher {
+	id: ID!
+	name: String!
+	email: String!
+	phone: String!
+	createdAt: Date!
+}
+
+# Root
+type Query {
+	findAllPublishers: [Publisher]!
+	countPublishers: Long!
+}
+
+# Root
+type Mutation {
+	createPublisher(name: String!, age: Int): Publisher!
+}

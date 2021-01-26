@@ -1,0 +1,18 @@
+version: '3'
+services:
+#  graphqlserver:
+#    image: graphql:latest
+#    ports:
+#    - 8080:8080
+  mongodb:
+    image: 'mongo:latest'
+    container_name: 'mongo_for_graphql'
+    ports:
+      - '27017-27017:27019-27019'
+    environment:
+      - MONGO_INITDB_DATABASE=grapgqldb
+      - MONGO_INITDB_USERNAME=test
+      - MONGO_INITDB_PASSWORD=test123
+    volumes:
+    - ./init-mongo.js:/docker-entrypoint-initdb.ddoc/init-mongo.js:ro
+    - ./mongo-volume:/data/db

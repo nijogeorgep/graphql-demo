@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  data:
+    mongodb:
+      database: graphqldb
+      username: test
+      password: test123
+      host: localhost
+      port: 27017
+
+# Graphql
+graphql:
+  servlet:
+    mapping: /apis/graphql

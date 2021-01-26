@@ -1,0 +1,21 @@
+type Book {
+	id: ID!
+	title: String!
+	isbn: String!
+	price: Double!
+	minutesRead: Int32!
+	createdAt: Date!
+}
+
+# Root
+extend type Query {
+	findAllBooks: [Book]!
+	countBooks: Long!
+}
+
+# Root
+extend type Mutation {
+	createBook(name: String!, age: Int): Book!
+	updateBook(id: ID!, title: String, description: String): Book!
+    deleteBook(id: ID!): Boolean
+}
